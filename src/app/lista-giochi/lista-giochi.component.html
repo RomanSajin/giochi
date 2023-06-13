@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="game-title">Lista Giochi</h2>
+  <div class="row">
+    <div *ngFor="let gioco of giochi" class="col-md-4">
+      <div class="card game-card">
+        <img [src]="gioco.immagine" class="card-img-top" alt="Immagine Gioco">
+        <div class="card-body" [ngClass]="{tavolo: gioco.tipo == 'tavolo', online: gioco.tipo === 'online', videogame: gioco.tipo=== 'videogame'}">
+          <h3 class="card-title game-name">{{ gioco.nome }}</h3>
+          <p class="card-text game-type">Tipo: {{ gioco.tipo }}</p>
+          <p class="card-text game-rating">Voto: {{ gioco.voto }}</p>
+          <button class="btn btn-primary game-button" (click)="incrementaVoto(gioco)">Like</button>
+          <button class="btn btn-primary game-button" (click)="decrementaVoto(gioco)">Dislike</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

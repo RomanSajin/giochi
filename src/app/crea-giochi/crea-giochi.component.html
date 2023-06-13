@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="game-title">Crea Giochi</h2>
+  <form (submit)="creaGioco()" class="game-form">
+    <div class="form-group">
+      <label class="game-label">Nome:</label>
+      <input type="text" [(ngModel)]="nome" name="nome" class="form-control game-input">
+    </div>
+    <div class="form-group">
+      <label class="game-label">Tipo:</label>
+      <select [(ngModel)]="tipo" name="tipo" class="form-control game-input">
+        <option value="da tavolo">Da Tavolo</option>
+        <option value="videogame">Videogame</option>
+        <option value="online">Online</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="game-label">Voto:</label>
+      <input type="number" [(ngModel)]="voto" name="voto" class="form-control game-input">
+    </div>
+    <div class="form-group">
+      <label class="game-label">Immagine:</label>
+      <input type="text" [(ngModel)]="immagine" name="immagine" class="form-control game-input">
+    </div>
+    <button type="submit" class="btn btn-danger game-button">Crea</button>
+  </form>
+</div>
